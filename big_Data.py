@@ -32,6 +32,7 @@ def writeCSV():
         #      break
 
         writer.writeheader()
+
         # old code, please ignore
         # line = 0
         # while line < 100000:  # while line number is not reached, keep writing rows
@@ -46,12 +47,11 @@ def writeCSV():
         #    elif number not in range(len(kleur)):
         #        continue
 
-        for line in range(100000):
+        for line in range(1000000):
             writer.writerow({fieldnames[i]: tup[i][random.randrange(10)] for i in range(10)})
 
 
-
-writeCSV()
+# writeCSV()
 
 
 def calculate():
@@ -73,17 +73,20 @@ def calculate():
         print(dic)
 
 
-'''# calculate()
+# calculate()
 dic = {}
+lst = []
 count = 0
+
 with open('test.csv', 'r', newline='\n') as testCSV:
     testReader = csv.reader(testCSV)
     for item in next(testReader):
         dic[item] = {}
+        lst.append(item)
     print(dic)
-    for row in testReader:
-        'print(row)'
-        for indexNumber in range(len(row)):
-            print(row[indexNumber])
 
-    print(dic)'''
+    for row in testReader:
+        for indexNumber in range(len(row)):
+            ''
+    print(dic)
+    print(count)
